@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Filter</title>
+<script type="text/javascript">
+	function filter()
+	{
+		var value, name, profile, i;
+
+		value = document.getElementById("value").value.toUpperCase();
+		profile = document.getElementsByClassName("profile");
+
+		for(i=0 ; i<profile.length ; i++)
+		{
+			name = profile[i].getElementsByClassName("name");
+
+			if (name[0].innerHTML.toUpperCase().indexOf(value) > -1)
+			{
+				profile[i].style.display = "flex";
+			}
+
+			else
+			{
+				profile[i].style.display = "none";
+			}
+		}
+
+	}
+</script>
+
+<style type="text/css">
+ 
+body{
+	margin: 0;
+	padding: 0;
+	font-family: "Montserrat";
+}
+.searchbox{
+	width: 90%;
+	margin: 10px auto;
+}
+
+.header{
+	background: #34495e;
+	overflow: hidden;
+	padding: 20px;
+	text-align: center;
+}
+
+.header h1{
+	text-transform: uppercase;
+	color: white;
+	margin:0;
+	margin-bottom: 8px;
+}
+
+#value{
+	border:none;
+	background: #2c3e50;
+	padding: 6px;
+	font-size: 18px;
+	width: 80%;
+	border-radius: 6px;
+	color: white;
+}
+
+.container{ 
+	background: #f1f1f1;
+	
+} 
+
+.profile{
+	margin: 6px 0;
+	display: flex;
+	align-items: center;
+}
+
+.icon{
+	width: 40px;
+	height: 40px;
+	background: #2c3e50;
+	color: white;
+	font-size: 24px;
+	text-align:center;
+	line-height: 40px;
+	border-radius: 50%;
+	margin-right: 8px;
+}
+.name{
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+}
+</style>
+</head>
+
+<body>
+	<div class="searchbox">
+		<div class="header">
+			<h1>Filter List</h1>
+			<input onkeyup="filter()" type="text" name="value" id="value" placeholder="Type to Search">
+			
+		</div>
+		
+		<div class="container">
+
+		    <div class="profile">
+		    	<span class="icon">A</span>
+		    	<span class="name">Aisha</span>
+		    </div>
+
+		    <div class="profile">
+		    	<span class="icon">B</span>
+		    	<span class="name">Babita</span>
+		    </div>
+
+		    <div class="profile">
+		    	<span class="icon">C</span>
+		    	<span class="name">Charli</span>
+		    </div>
+
+		    <div class="profile">
+		    	<span class="icon">D</span>
+		    	<span class="name">Deepa</span>
+		    </div>
+
+		    <div class="profile">
+		    	<span class="icon">E</span>
+		    	<span class="name">Esha</span>
+		    </div>
+
+		<div>
+		
+	</div>
+
+</body>
+</html>
